@@ -1,0 +1,19 @@
+[module/pornhub]
+type = custom/script
+exec = echo " hub "
+interval = 3600
+click-left = "firefox --private-window https://pornhub.com/random" &
+
+format = <label>
+format-prefix = "  Porn "
+format-prefix-foreground = #ffffff
+format-prefix-background = #000000
+
+format-overline = #000000
+format-underline = #000000
+format-foreground = #000000
+format-background = #ffa500
+
+format-suffix = " "
+format-suffix-background = #000000
+format-suffix-foreground = #000000

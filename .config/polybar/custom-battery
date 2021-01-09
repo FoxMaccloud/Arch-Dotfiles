@@ -1,0 +1,4 @@
+[module/custom-battery]
+type = custom/script
+exec = polybar-ab -polybar -thr 10
+tail = true

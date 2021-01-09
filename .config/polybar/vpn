@@ -1,0 +1,7 @@
+#!/bin/bash
+
+if [[ $(pgrep openvpn) ]];then
+        echo "vpn On"
+else
+        echo  "vpn Off"
+fi

@@ -33,6 +33,7 @@ checkInstalled i3lock
 checkInstalled libnotify
 checkInstalled scrot
 checkInstalled flameshot
+checkInstalled exa
 
 error(){
     #clear; printf "ERROR:\\n%s\\n" "$1" >&2; exit 1;

@@ -36,8 +36,6 @@
 ```
 </div>
 
-![Alt text](https://github.com/FoxMaccloud/Arch-Dotfiles/blob/main/Desktop.png "Desktop")
-
 Arch Linux configuration made and used by [FoxMaccloud](https://foxmaccloud.com/).
 
 | Distribution   | Arch Linux |
@@ -54,6 +52,9 @@ Arch Linux configuration made and used by [FoxMaccloud](https://foxmaccloud.com/
 | Font           | Nerd Fonts |
 | Compositor     | Picom      |
 | Menu           | Dmenu      |
+
+
+![Alt text](https://github.com/FoxMaccloud/Arch-Dotfiles/blob/main/Desktop.png "Desktop")
 
 ## Installation
 

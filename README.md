@@ -35,7 +35,8 @@
                                               ░        ░                                   ░       
 ```
 </div>
-![Desktop](https://github.com/FoxMaccloud/Arch-Dotfiles/blob/main/Desktop.png)
+
+![Alt text](https://github.com/FoxMaccloud/Arch-Dotfiles/blob/main/Desktop.png "Desktop")
 
 Arch Linux configuration made and used by [FoxMaccloud](https://foxmaccloud.com/).
 

@@ -36,7 +36,7 @@
 ```
 </div>
 
-Arch Linux configuration made and used by [FoxMaccloud](https://foxmaccloud.com/).
+### Arch Linux configuration made and used by [FoxMaccloud](https://foxmaccloud.com/).
 
 | Distribution   | Arch Linux |
 |----------------|------------|

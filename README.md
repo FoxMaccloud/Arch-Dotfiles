@@ -38,7 +38,7 @@
 ![Desktop](Desktop.png)
 
 Arch Linux configuration made and used by [FoxMaccloud](https://foxmaccloud.com/).
-
+|----------------|------------|
 | Distribution   | Arch Linux |
 | Window Manager | i3-gaps    |
 | Shell          | Zsh        |
@@ -72,5 +72,5 @@ You can also install it manually without the script.
 
 
 <div align="center">
-Made with :heart: by [Fox Maccloud](https://foxmaccloud.com/)
+Made with :heart: by [FoxMaccloud](https://foxmaccloud.com/)
 </div>

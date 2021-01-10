@@ -79,7 +79,7 @@ cp -r .config/kitty ~/.config/kitty
 cp -r .config/dunst ~/.config/dunst
 cp -r .config/ranger ~/.config/ranger
 cp -r .oh-my-zsh ~/.oh-my-zsh
-cp -r .zshrc ~/.zshrc && sed -i "s/foxmaccloud/$name/g" ~/.config/i3/config
+cp -r .zshrc ~/.zshrc && sed -i "s/foxmaccloud/$name/g" ~/.zshrc
 cp -r .vimrc ~/.vimrc
 
 # Setting up wallpapers

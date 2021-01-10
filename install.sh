@@ -1,21 +1,42 @@
 #!/bin/bash
 
+printf "\nWelcome!\n\n"
+printf "Installing my dotfiles now! Make sure to be running as root.\n"
+printf "Note that this program is still work in progress!\n\n"
+while true; do
+    read -p "Do you still wish to continue? (y/n)" yn
+    case $yn in
+        [Yy]* ) break;;
+        [Nn]* ) exit;;
+        * ) printf "Please answer with yes or no.\n";;
+    esac
+done
+
+error(){
+    clear; printf "ERROR:\\n%s\\n" "$1" >&2; exit 1;
+    #printf "ERROR:\\n%s\\n" "$1" >&2; exit 1;
+}
+
 checkInstalled() {
     if type -p "$1" > /dev/null; then
-        echo "Found "$1""
+        printf "Found "$1"\n"
     else
-        echo "Installing "$1"" || pacman --noconfirm -S "$1"
+        printf "Installing "$1"\n" || pacman --noconfirm --needed -S "$1"
     fi
 }
 
+# Check if user is root.
+pacman --noconfirm --needed -Sy dialog || error "Are you sure you're running this as the root user or are on an Arch-based system?"
+
+
 if type -p zsh > /dev/null; then
-    echo "Found zsh"
+    printf "Found zsh\n"
 else
-    echo "Installing zsh" || pacman --noconfirm -S zsh zsh-autosuggestions zsh-completions zsh-history-substring-search zsh-theme-powerlevel10K
+    printf "Installing zsh\n" || pacman --noconfirm --needed -S zsh zsh-autosuggestions zsh-completions zsh-history-substring-search zsh-theme-powerlevel10K
+    # Setting zsh as default shell
+    chsh -s /bin/zsh "$name" > /dev/null 2>&1
+    sudo -u "$name" mkdir -p "/home/$name/.cache/zsh/"
 fi
-# Setting zsh as default shell
-chsh -s /bin/zsh "$name" > /dev/null 2>&1
-sudo -u "$name" mkdir -p "/home/$name/.cache/zsh/"
 
 # Install software
 # TODO: Add polybar from the AUR 
@@ -35,22 +56,8 @@ checkInstalled scrot
 checkInstalled flameshot
 checkInstalled exa
 
-error(){
-    #clear; printf "ERROR:\\n%s\\n" "$1" >&2; exit 1;
-    printf "ERROR:\\n%s\\n" "$1" >&2; exit 1;
-}
-
-
-echo "\nWelcome!\n"
-echo "Installing my dotfiles now! Make sure to be running as root."
-echo "Note that this program is still work in progress!\n"
-
-# Check if user is root.
-pacman --noconfirm --needed -Sy dialog || error "Are you sure you're running this as the root user or are on an Arch-based system?"
-
 # Setting up colors for pacman
 #grep -q "^Color" /etc/pacman.conf || sed -i "s/^#Color$/Color" /etc/pacman.conf
-
 
 # Installing the dotfiles!
 # Note to self: I should prob just made a function for all this... smh.
@@ -88,4 +95,4 @@ reloadDaemons(){
     systemctl start "$1"
 }
 
-echo "Installed successfully!"
+printf "\nInstalled successfully!\n"

@@ -26,7 +26,10 @@ checkInstalled() {
 }
 
 # Check if user is root.
-pacman --noconfirm --needed -Sy dialog || error "Are you sure you're running this as the root user or are on an Arch-based system?"
+if [["$EUID" -ne 0]]; then
+    error "Are you sure you're running this as the root user or are on an Arch-based system?"
+fi
+#pacman --noconfirm --needed -Sy dialog || error "Are you sure you're running this as the root user or are on an Arch-based system?"
 
 
 if type -p zsh > /dev/null; then
@@ -61,16 +64,16 @@ checkInstalled exa
 
 # Installing the dotfiles!
 # Note to self: I should prob just made a function for all this... smh.
-mv ~/.config/i3 ~/.config/i3-BACKUP
-mv ~/.config/picom ~/.config/picom-BACKUP
-mv ~/.config/polybar ~/.config/polybar-BACKUP
-mv ~/.config/kitty ~/.config/kitty-BACKUP
-mv ~/.config/dunst ~/.config/dunst-BACKUP
-mv ~/.config/ranger ~/.config/ranger-BACKUP
-mv ~/.oh-my-zsh ~/.oh-my-zsh-BACKUP
+mv ~/.config/i3 ~/.config/i3-BACKUP 2>/dev/null
+mv ~/.config/picom ~/.config/picom-BACKUP 2>/dev/null
+mv ~/.config/polybar ~/.config/polybar-BACKUP 2>/dev/null
+mv ~/.config/kitty ~/.config/kitty-BACKUP 2>/dev/null
+mv ~/.config/dunst ~/.config/dunst-BACKUP 2>/dev/null
+mv ~/.config/ranger ~/.config/ranger-BACKUP 2>/dev/null
+mv ~/.oh-my-zsh ~/.oh-my-zsh-BACKUP 2>/dev/null
 #mv ~/.config/ ~/.config/
-mv ~/.zshrc ~/.zshrc-BACKUP
-mv ~/.vimrc ~/.vimrc-BACKUP
+mv ~/.zshrc ~/.zshrc-BACKUP 2>/dev/null
+mv ~/.vimrc ~/.vimrc-BACKUP 2>/dev/null
 
 cp -r .config/i3 ~/.config/i3 && sed -i "s/foxmaccloud/$name/g" ~/.config/i3/config
 cp -r .config/picom ~/.config/picom

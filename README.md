@@ -39,6 +39,7 @@
 </div>
 
 <div position="Left">
+  
 | Distribution   | Arch Linux |
 |----------------|------------|
 | Window Manager | i3-gaps    |
@@ -53,13 +54,16 @@
 | Font           | Nerd Fonts |
 | Compositor     | Picom      |
 | Menu           | Dmenu      |
+
 </div>
 
 <div position="right">
+  
 I'm posting my dotfiles because some people wanted me to share.
 I like a minimalistic enviorment. I made a website which would be cool if you checked out.
 Check it out at https://foxmaccloud.com/
 The content I post on my website will go in the infosec direction.
+
 </div>
 
 ## Screenshot

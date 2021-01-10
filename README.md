@@ -38,22 +38,7 @@
 ### Arch Linux configuration made and used by [FoxMaccloud](https://foxmaccloud.com/).
 </div>
 
-.column {
-  float: left;
-  width: 50%;
-  padding: 10px;
-  height: 300px;
-}
-
-.row:after {
-  content: "";
-  display: table;
-  clear: both;
-}
-
-<div class="row">
-  <div class="column">
-    <p>
+<div position="Left">
 | Distribution   | Arch Linux |
 |----------------|------------|
 | Window Manager | i3-gaps    |
@@ -68,18 +53,14 @@
 | Font           | Nerd Fonts |
 | Compositor     | Picom      |
 | Menu           | Dmenu      |
-    </p>
-  </div>
-  <div class="column" style="background-color:#bbb;">
-    <p>
+</div>
+
+<div position="right">
 I'm posting my dotfiles because some people wanted me to share.
 I like a minimalistic enviorment. I made a website which would be cool if you checked out.
 Check it out at https://foxmaccloud.com/
 The content I post on my website will go in the infosec direction.
-    </p>
-  </div>
 </div>
-
 
 ## Screenshot
 ![Alt text](https://github.com/FoxMaccloud/Arch-Dotfiles/blob/main/Desktop.png "Desktop")

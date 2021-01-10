@@ -38,13 +38,12 @@
 ### Arch Linux configuration made and used by [FoxMaccloud](https://foxmaccloud.com/).
 </div>
 
-<div position="Left">
   
 | Distribution   | Arch Linux |
-|----------------|------------|
-| Window Manager | i3-gaps    |
-| Shell          | Zsh        |
-| Terminal       | Kitty      |
+|----------------|------------| I'm posting my dotfiles because some people wanted me to share.
+| Window Manager | i3-gaps    | I like a minimalistic enviorment. I made a website which would be cool if you checked out.
+| Shell          | Zsh        | Check it out at https://foxmaccloud.com/
+| Terminal       | Kitty      | The content I post on my website will go in the infosec direction.
 | Bar            | Polybar    |
 | Browser        | FireFox    |
 | Editor         | Vim        |
@@ -55,16 +54,6 @@
 | Compositor     | Picom      |
 | Menu           | Dmenu      |
 
-</div>
-
-<div position="align">
-  
-I'm posting my dotfiles because some people wanted me to share.
-I like a minimalistic enviorment. I made a website which would be cool if you checked out.
-Check it out at https://foxmaccloud.com/
-The content I post on my website will go in the infosec direction.
-
-</div>
 
 ## Screenshot
 ![Alt text](https://github.com/FoxMaccloud/Arch-Dotfiles/blob/main/Desktop.png "Desktop")

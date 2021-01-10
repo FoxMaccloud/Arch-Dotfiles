@@ -38,21 +38,25 @@
 ### Arch Linux configuration made and used by [FoxMaccloud](https://foxmaccloud.com/).
 </div>
 
+I'm posting my dotfiles because some people wanted me to share.
+I like a minimalistic enviorment. I made a website which would be cool if you checked out.
+Check it out at https://foxmaccloud.com/
+The content I post on my website will go in the infosec direction.
   
-| Distribution   | Arch Linux |
-|----------------|------------| I'm posting my dotfiles because some people wanted me to share.
-| Window Manager | i3-gaps    | I like a minimalistic enviorment. I made a website which would be cool if you checked out.
-| Shell          | Zsh        | Check it out at https://foxmaccloud.com/
-| Terminal       | Kitty      | The content I post on my website will go in the infosec direction.
-| Bar            | Polybar    |
-| Browser        | FireFox    |
-| Editor         | Vim        |
-| Video Player   | VLC        |
-| Music Player   | Spotify    |
-| Image viewer   | feh        |
-| Font           | Nerd Fonts |
-| Compositor     | Picom      |
-| Menu           | Dmenu      |
+| Distribution   | Arch Linux | Contrary to popular belief Arch is the best distribution.                                       |
+|----------------|------------|-------------------------------------------------------------------------------------------------|
+| Window Manager | i3-gaps    | I like i3-gaps since it's fast and works great on my laptop. Makes me unreliant on a mouse      |
+| Shell          | Zsh        | Zsh is an amazing replacement to bash. It also helps me with spelling correction xD             |
+| Terminal       | Kitty      | I used to use URXVT, but I now use Kitty because of it's GPU acceleration                       |
+| Bar            | Polybar    | Polybar is a great bar. I swapped to this after using the standard i3bar for a while.           |
+| Browser        | FireFox    | Firefox, guuuuud...                                                                             |
+| Editor         | Vim        | I use vim for everything. My goto editor. I also use full IDEs when the situation calls for it. |
+| Video Player   | VLC        | Just my goto video player...                                                                    |
+| Music Player   | Spotify    | My family pays for my spotify... I also use Cmus.                                               |
+| Image viewer   | feh        | Just a minimalisitc image viewer.                                                               |
+| Font           | Nerd Fonts | I use fonts from the Nerd Fonts package.                                                        |
+| Compositor     | Picom      | Currently using picom which is a fork of compton.                                               |
+| Menu           | Dmenu      | I just use Dmenu. I also have used Rofi which is nice.                                          |
 
 
 ## Screenshot

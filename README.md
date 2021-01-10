@@ -57,7 +57,7 @@
 
 </div>
 
-<div position="right">
+<div position="align">
   
 I'm posting my dotfiles because some people wanted me to share.
 I like a minimalistic enviorment. I made a website which would be cool if you checked out.

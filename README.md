@@ -38,6 +38,8 @@
 
 ### Arch Linux configuration made and used by [FoxMaccloud](https://foxmaccloud.com/).
 
+<div id="column1" align="Left" style="width: 50%; float: left">
+
 | Distribution   | Arch Linux |
 |----------------|------------|
 | Window Manager | i3-gaps    |
@@ -53,7 +55,19 @@
 | Compositor     | Picom      |
 | Menu           | Dmenu      |
 
+</div>
+<div id="column2" align="right" style="width: 50%; float: right">
+I'm posting my dotfiles because some people wanted me to share.
+I like a minimalistic enviorment. I made a website which would be cool if you checked out.
+Check it out at https://foxmaccloud.com/
+The content I post on my website will go in the infosec direction.
 
+
+
+
+</div>
+
+## Screenshot
 ![Alt text](https://github.com/FoxMaccloud/Arch-Dotfiles/blob/main/Desktop.png "Desktop")
 
 ## Installation

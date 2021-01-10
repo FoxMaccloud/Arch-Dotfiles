@@ -72,14 +72,14 @@ mv ~/.oh-my-zsh ~/.oh-my-zsh-BACKUP
 mv ~/.zshrc ~/.zshrc-BACKUP
 mv ~/.vimrc ~/.vimrc-BACKUP
 
-cp -r .config/i3 ~/.config/i3 || sed -i "s/foxmaccloud/$name/g" ~/.config/i3/config
+cp -r .config/i3 ~/.config/i3 && sed -i "s/foxmaccloud/$name/g" ~/.config/i3/config
 cp -r .config/picom ~/.config/picom
 cp -r .config/polybar ~/.config/polybar
 cp -r .config/kitty ~/.config/kitty
 cp -r .config/dunst ~/.config/dunst
 cp -r .config/ranger ~/.config/ranger
 cp -r .oh-my-zsh ~/.oh-my-zsh
-cp -r .zshrc ~/.zshrc || sed -i "s/foxmaccloud/$name/g" ~/.config/i3/config
+cp -r .zshrc ~/.zshrc && sed -i "s/foxmaccloud/$name/g" ~/.config/i3/config
 cp -r .vimrc ~/.vimrc
 
 # Setting up wallpapers

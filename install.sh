@@ -32,6 +32,9 @@ fi
 #pacman --noconfirm --needed -Sy dialog || error "Are you sure you're running this as the root user or are on an Arch-based system?"
 
 
+# Get user home dir
+USER_HOME=$(getent passwd $SUDO_USER | cut -d: -f6)
+
 if type -p zsh > /dev/null; then
     printf "Found zsh\n"
 else
@@ -64,33 +67,33 @@ checkInstalled exa
 
 # Installing the dotfiles!
 # Note to self: I should prob just made a function for all this... smh.
-mv ~/.config/i3 ~/.config/i3-BACKUP 2>/dev/null
-mv ~/.config/picom ~/.config/picom-BACKUP 2>/dev/null
-mv ~/.config/polybar ~/.config/polybar-BACKUP 2>/dev/null
-mv ~/.config/kitty ~/.config/kitty-BACKUP 2>/dev/null
-mv ~/.config/dunst ~/.config/dunst-BACKUP 2>/dev/null
-mv ~/.config/ranger ~/.config/ranger-BACKUP 2>/dev/null
-mv ~/.oh-my-zsh ~/.oh-my-zsh-BACKUP 2>/dev/null
-#mv ~/.config/ ~/.config/
-mv ~/.zshrc ~/.zshrc-BACKUP 2>/dev/null
-mv ~/.vimrc ~/.vimrc-BACKUP 2>/dev/null
+mv $USER_HOME/.config/i3 $USER_HOME/.config/i3-BACKUP 2>/dev/null
+mv $USER_HOME/.config/picom $USER_HOME/.config/picom-BACKUP 2>/dev/null
+mv $USER_HOME/.config/polybar $USER_HOME/.config/polybar-BACKUP 2>/dev/null
+mv $USER_HOME/.config/kitty $USER_HOME/.config/kitty-BACKUP 2>/dev/null
+mv $USER_HOME/.config/dunst $USER_HOME/.config/dunst-BACKUP 2>/dev/null
+mv $USER_HOME/.config/ranger $USER_HOME/.config/ranger-BACKUP 2>/dev/null
+mv $USER_HOME/.oh-my-zsh $USER_HOME/.oh-my-zsh-BACKUP 2>/dev/null
+#mv $USER_HOME/.config/ $USER_HOME/.config/
+mv $USER_HOME/.zshrc $USER_HOME/.zshrc-BACKUP 2>/dev/null
+mv $USER_HOME/.vimrc $USER_HOME/.vimrc-BACKUP 2>/dev/null
 
-cp -r .config/i3 ~/.config/i3 && sed -i "s/foxmaccloud/$name/g" ~/.config/i3/config
-cp -r .config/picom ~/.config/picom
-cp -r .config/polybar ~/.config/polybar
-cp -r .config/kitty ~/.config/kitty
-cp -r .config/dunst ~/.config/dunst
-cp -r .config/ranger ~/.config/ranger
-cp -r .oh-my-zsh ~/.oh-my-zsh
-cp -r .zshrc ~/.zshrc && sed -i "s/foxmaccloud/$name/g" ~/.zshrc
-cp -r .vimrc ~/.vimrc
+cp -r .config/i3 $USER_HOME/.config/i3 && sed -i "s/home\/foxmaccloud/$USER_HOME/g" $USER_HOME/.config/i3/config
+cp -r .config/picom $USER_HOME/.config/picom
+cp -r .config/polybar $USER_HOME/.config/polybar
+cp -r .config/kitty $USER_HOME/.config/kitty
+cp -r .config/dunst $USER_HOME/.config/dunst
+cp -r .config/ranger $USER_HOME/.config/ranger
+cp -r .oh-my-zsh $USER_HOME/.oh-my-zsh
+cp -r .zshrc $USER_HOME/.zshrc && sed -i "s/home\/foxmaccloud/$USER_HOME/g" $USER_HOME/.zshrc
+cp -r .vimrc $USER_HOME/.vimrc
 
 # Setting up wallpapers
-if [! -f ~/Pictures/Wallpapers]; then
-    mkdir -p ~/Pictures/Wallpapers
+if [! -f $USER_HOME/Pictures/Wallpapers]; then
+    mkdir -p $USER_HOME/Pictures/Wallpapers
 fi
-cp wallhaven-13lyrw.png ~/Pictures/Wallpapers/
-cp wallhaven-j59zrp.jpg ~/Pictures/Wallpapers/
+cp wallhaven-13lyrw.png $USER_HOME/Pictures/Wallpapers/
+cp wallhaven-j59zrp.jpg $USER_HOME/Pictures/Wallpapers/
 
 # TODO: Fix me!
 reloadDaemons(){

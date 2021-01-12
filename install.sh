@@ -3,14 +3,19 @@
 printf "\nWelcome!\n\n"
 printf "Installing my dotfiles now! Make sure to be running as root.\n"
 printf "Note that this program is still work in progress!\n\n"
-while true; do
-    read -p "Do you still wish to continue? (y/n)" yn
+
+yesnoPrompt() {
+    while true; do
+    read -p "$1 (y/n)" yn
     case $yn in
         [Yy]* ) break;;
         [Nn]* ) exit;;
         * ) printf "Please answer with yes or no.\n";;
     esac
 done
+}
+
+yesnoPrompt "Do you still wish to continue?"
 
 error(){
     clear; printf "ERROR:\\n%s\\n" "$1" >&2; exit 1;
@@ -33,15 +38,17 @@ fi
 
 
 # Get user home dir
-USER_HOME=$(getent passwd $SUDO_USER | cut -d: -f6)
+USER_HOME=$(getent passwd $SUDO_USER | cut -d: -f6 | cut -d "/" -f3)
+yesnoPrompt "Installing under the user $USER_HOME! Is this the correct user?"
+
 
 if type -p zsh > /dev/null; then
     printf "Found zsh\n"
 else
     printf "Installing zsh\n" && pacman --noconfirm --needed -S zsh zsh-autosuggestions zsh-completions zsh-history-substring-search zsh-theme-powerlevel10K
     # Setting zsh as default shell
-    chsh -s /bin/zsh "$name" > /dev/null 2>&1
-    sudo -u "$name" mkdir -p "/home/$name/.cache/zsh/"
+    chsh -s /bin/zsh "$USER_HOME" > /dev/null 2>&1
+    sudo -u "$USER_HOME" mkdir -p "/home/$USER_HOME/.cache/zsh/"
 fi
 
 # Install software
@@ -78,14 +85,14 @@ mv $USER_HOME/.oh-my-zsh $USER_HOME/.oh-my-zsh-BACKUP 2>/dev/null
 mv $USER_HOME/.zshrc $USER_HOME/.zshrc-BACKUP 2>/dev/null
 mv $USER_HOME/.vimrc $USER_HOME/.vimrc-BACKUP 2>/dev/null
 
-cp -r .config/i3 $USER_HOME/.config/i3 && sed -i "s/home\/foxmaccloud/$USER_HOME/g" $USER_HOME/.config/i3/config
+cp -r .config/i3 $USER_HOME/.config/i3 && sed -i "s/foxmaccloud/$USER_HOME/g" $USER_HOME/.config/i3/config
 cp -r .config/picom $USER_HOME/.config/picom
 cp -r .config/polybar $USER_HOME/.config/polybar
 cp -r .config/kitty $USER_HOME/.config/kitty
 cp -r .config/dunst $USER_HOME/.config/dunst
 cp -r .config/ranger $USER_HOME/.config/ranger
 cp -r .oh-my-zsh $USER_HOME/.oh-my-zsh
-cp -r .zshrc $USER_HOME/.zshrc && sed -i "s/home\/foxmaccloud/$USER_HOME/g" $USER_HOME/.zshrc
+cp -r .zshrc $USER_HOME/.zshrc && sed -i "s/foxmaccloud/$USER_HOME/g" $USER_HOME/.zshrc
 cp -r .vimrc $USER_HOME/.vimrc
 
 # Setting up wallpapers

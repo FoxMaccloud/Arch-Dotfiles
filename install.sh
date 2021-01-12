@@ -26,7 +26,7 @@ checkInstalled() {
     if type -p "$1" > /dev/null; then
         printf "Found "$1"\n"
     else
-        printf "Installing "$1"\n" && pacman --noconfirm --needed -S "$1"
+        printf "Installing "$1"\n" && pacman --noconfirm --needed -S "$1" 2>/dev/null
     fi
 }
 
@@ -45,7 +45,7 @@ yesnoPrompt "Installing under the user $USER_HOME! Is this the correct user?"
 if type -p zsh > /dev/null; then
     printf "Found zsh\n"
 else
-    printf "Installing zsh\n" && pacman --noconfirm --needed -S zsh zsh-autosuggestions zsh-completions zsh-history-substring-search zsh-theme-powerlevel10K
+    printf "Installing zsh\n" && pacman --noconfirm --needed -S zsh zsh-autosuggestions zsh-completions zsh-history-substring-search zsh-theme-powerlevel10K 2>/dev/null
     # Setting zsh as default shell
     chsh -s /bin/zsh "$USER_HOME" > /dev/null 2>&1
     sudo -u "$USER_HOME" mkdir -p "/home/$USER_HOME/.cache/zsh/"

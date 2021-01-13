@@ -31,7 +31,7 @@ checkInstalled() {
 }
 
 # Check if user is root.
-if [["$EUID" -ne 0]]; then
+if [[ "$EUID" -ne 0 ]]; then
     error "Are you sure you're running this as the root user or are on an Arch-based system?"
 fi
 #pacman --noconfirm --needed -Sy dialog || error "Are you sure you're running this as the root user or are on an Arch-based system?"
@@ -85,18 +85,24 @@ mv $USER_HOME/.oh-my-zsh $USER_HOME/.oh-my-zsh-BACKUP 2>/dev/null
 mv $USER_HOME/.zshrc $USER_HOME/.zshrc-BACKUP 2>/dev/null
 mv $USER_HOME/.vimrc $USER_HOME/.vimrc-BACKUP 2>/dev/null
 
-cp -r .config/i3 $USER_HOME/.config/i3 && sed -i "s/foxmaccloud/$USER_HOME/g" $USER_HOME/.config/i3/config
-cp -r .config/picom $USER_HOME/.config/picom
-cp -r .config/polybar $USER_HOME/.config/polybar
-cp -r .config/kitty $USER_HOME/.config/kitty
-cp -r .config/dunst $USER_HOME/.config/dunst
-cp -r .config/ranger $USER_HOME/.config/ranger
-cp -r .oh-my-zsh $USER_HOME/.oh-my-zsh
-cp -r .zshrc $USER_HOME/.zshrc && sed -i "s/foxmaccloud/$USER_HOME/g" $USER_HOME/.zshrc
-cp -r .vimrc $USER_HOME/.vimrc
+checkexists() {
+    if [[ ! -f /home/$USER_HOME/.config/$1 ]]; then
+        mkdir -p /home/$USER_HOME/.config/$1
+    fi
+}
+
+checkexists i3 && cp -r .config/i3 $USER_HOME/.config/i3 && sed -i "s/foxmaccloud/$USER_HOME/g" /home/$USER_HOME/.config/i3/config
+checkexists picom && cp -r .config/picom $USER_HOME/.config/picom
+checkexists polybar && cp -r .config/polybar $USER_HOME/.config/polybar
+checkexists kitty && cp -r .config/kitty $USER_HOME/.config/kitty
+checkexists dunst && cp -r .config/dunst $USER_HOME/.config/dunst
+checkexists ranger- && cp -r .config/ranger $USER_HOME/.config/ranger
+cp -r .oh-my-zsh /home/$USER_HOME
+cp -r .zshrc /home/$USER_HOME && sed -i "s/foxmaccloud/$USER_HOME/g" /home/$USER_HOME/.zshrc
+cp -r .vimrc /home/$USER_HOME
 
 # Setting up wallpapers
-if [! -f $USER_HOME/Pictures/Wallpapers]; then
+if [ ! -f $USER_HOME/Pictures/Wallpapers ]; then
     mkdir -p $USER_HOME/Pictures/Wallpapers
 fi
 cp wallhaven-13lyrw.png $USER_HOME/Pictures/Wallpapers/

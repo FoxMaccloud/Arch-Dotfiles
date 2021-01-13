@@ -39,7 +39,7 @@ fi
 
 # Get user home dir
 USER_HOME=$(getent passwd $SUDO_USER | cut -d: -f6 | cut -d "/" -f3)
-yesnoPrompt "Installing under the user \"$USER_HOME\" Is this the correct user?"
+yesnoPrompt "\nInstalling under the user \"$USER_HOME\" Is this the correct user?"
 
 
 if type -p zsh > /dev/null; then

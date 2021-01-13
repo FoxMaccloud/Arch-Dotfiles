@@ -74,16 +74,16 @@ checkInstalled exa
 
 # Installing the dotfiles!
 # Note to self: I should prob just made a function for all this... smh.
-mv $USER_HOME/.config/i3 $USER_HOME/.config/i3-BACKUP 2>/dev/null
-mv $USER_HOME/.config/picom $USER_HOME/.config/picom-BACKUP 2>/dev/null
-mv $USER_HOME/.config/polybar $USER_HOME/.config/polybar-BACKUP 2>/dev/null
-mv $USER_HOME/.config/kitty $USER_HOME/.config/kitty-BACKUP 2>/dev/null
-mv $USER_HOME/.config/dunst $USER_HOME/.config/dunst-BACKUP 2>/dev/null
-mv $USER_HOME/.config/ranger $USER_HOME/.config/ranger-BACKUP 2>/dev/null
-mv $USER_HOME/.oh-my-zsh $USER_HOME/.oh-my-zsh-BACKUP 2>/dev/null
+mv /home/$USER_HOME/.config/i3 /home/$USER_HOME/.config/i3-BACKUP 2>/dev/null
+mv /home/$USER_HOME/.config/picom /home/$USER_HOME/.config/picom-BACKUP 2>/dev/null
+mv /home/$USER_HOME/.config/polybar /home/$USER_HOME/.config/polybar-BACKUP 2>/dev/null
+mv /home/$USER_HOME/.config/kitty /home/$USER_HOME/.config/kitty-BACKUP 2>/dev/null
+mv /home/$USER_HOME/.config/dunst /home/$USER_HOME/.config/dunst-BACKUP 2>/dev/null
+mv /home/$USER_HOME/.config/ranger /home/$USER_HOME/.config/ranger-BACKUP 2>/dev/null
+mv /home/$USER_HOME/.oh-my-zsh /home/$USER_HOME/.oh-my-zsh-BACKUP 2>/dev/null
 #mv $USER_HOME/.config/ $USER_HOME/.config/
-mv $USER_HOME/.zshrc $USER_HOME/.zshrc-BACKUP 2>/dev/null
-mv $USER_HOME/.vimrc $USER_HOME/.vimrc-BACKUP 2>/dev/null
+mv /home/$USER_HOME/.zshrc /home/$USER_HOME/.zshrc-BACKUP 2>/dev/null
+mv /home/$USER_HOME/.vimrc /home/$USER_HOME/.vimrc-BACKUP 2>/dev/null
 
 checkexists() {
     if [[ ! -f /home/$USER_HOME/.config/$1 ]]; then
@@ -91,22 +91,22 @@ checkexists() {
     fi
 }
 
-checkexists i3 && cp -r .config/i3 $USER_HOME/.config/i3 && sed -i "s/foxmaccloud/$USER_HOME/g" /home/$USER_HOME/.config/i3/config
-checkexists picom && cp -r .config/picom $USER_HOME/.config/picom
-checkexists polybar && cp -r .config/polybar $USER_HOME/.config/polybar
-checkexists kitty && cp -r .config/kitty $USER_HOME/.config/kitty
-checkexists dunst && cp -r .config/dunst $USER_HOME/.config/dunst
-checkexists ranger- && cp -r .config/ranger $USER_HOME/.config/ranger
+checkexists i3 && cp -r .config/i3 /home/$USER_HOME/.config/i3 && sed -i "s/foxmaccloud/$USER_HOME/g" /home/$USER_HOME/.config/i3/config
+checkexists picom && cp -r .config/picom /home/$USER_HOME/.config/picom
+checkexists polybar && cp -r .config/polybar /home/$USER_HOME/.config/polybar
+checkexists kitty && cp -r .config/kitty /home/$USER_HOME/.config/kitty
+checkexists dunst && cp -r .config/dunst /home/$USER_HOME/.config/dunst
+checkexists ranger- && cp -r .config/ranger /home/$USER_HOME/.config/ranger
 cp -r .oh-my-zsh /home/$USER_HOME
 cp -r .zshrc /home/$USER_HOME && sed -i "s/foxmaccloud/$USER_HOME/g" /home/$USER_HOME/.zshrc
 cp -r .vimrc /home/$USER_HOME
 
 # Setting up wallpapers
-if [ ! -f $USER_HOME/Pictures/Wallpapers ]; then
-    mkdir -p $USER_HOME/Pictures/Wallpapers
+if [ ! -f /home/$USER_HOME/Pictures/Wallpapers ]; then
+    mkdir -p /home/$USER_HOME/Pictures/Wallpapers
 fi
-cp wallhaven-13lyrw.png $USER_HOME/Pictures/Wallpapers/
-cp wallhaven-j59zrp.jpg $USER_HOME/Pictures/Wallpapers/
+cp wallhaven-13lyrw.png /home/$USER_HOME/Pictures/Wallpapers/
+cp wallhaven-j59zrp.jpg /home/$USER_HOME/Pictures/Wallpapers/
 
 # TODO: Fix me!
 reloadDaemons(){

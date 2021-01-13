@@ -108,6 +108,24 @@ fi
 cp wallhaven-13lyrw.png /home/$USER_HOME/Pictures/Wallpapers/
 cp wallhaven-j59zrp.jpg /home/$USER_HOME/Pictures/Wallpapers/
 
+
+# Fix ownership for files
+
+chGrpOwn(){
+    chown -R /home/$USER_HOME/$1
+    chgrp -R /home/$USER_HOME/$1
+}
+chGrpOwn .config/i3
+chGrpOwn .config/picom
+chGrpOwn .config/polybar
+chGrpOwn .config/kitty
+chGrpOwn .config/dunst
+chGrpOwn .config/ranger
+chGrpOwn .oh-my-zsh
+chGrpOwn .zshrc
+chGrpOwn .vimrc
+chGrpOwn Pictures
+
 # TODO: Fix me!
 reloadDaemons(){
     systemctl enable "$1"

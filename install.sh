@@ -112,8 +112,8 @@ cp wallhaven-j59zrp.jpg /home/$USER_HOME/Pictures/Wallpapers/
 # Fix ownership for files
 
 chGrpOwn(){
-    chown -R /home/$USER_HOME/$1
-    chgrp -R /home/$USER_HOME/$1
+    chown -R $USER_HOME /home/$USER_HOME/$1
+    chgrp -R $USER_HOME /home/$USER_HOME/$1
 }
 chGrpOwn .config/i3
 chGrpOwn .config/picom

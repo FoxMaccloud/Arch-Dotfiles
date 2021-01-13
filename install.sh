@@ -32,7 +32,10 @@ checkInstalled() {
 
 # Check if user is root.
 if [[ "$EUID" -ne 0 ]]; then
-    error "Are you sure you're running this as the root user or are on an Arch-based system?"
+    error "Are you sure you're running this as the root user?"
+    if ! type -p pacman > /dev/null; then
+    error "Are on an Arch-based system?"
+    fi
 fi
 #pacman --noconfirm --needed -Sy dialog || error "Are you sure you're running this as the root user or are on an Arch-based system?"
 

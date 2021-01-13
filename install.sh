@@ -39,7 +39,7 @@ fi
 
 # Get user home dir
 USER_HOME=$(getent passwd $SUDO_USER | cut -d: -f6 | cut -d "/" -f3)
-yesnoPrompt "Installing under the user $USER_HOME! Is this the correct user?"
+yesnoPrompt "Installing under the user \"$USER_HOME\" Is this the correct user?"
 
 
 if type -p zsh > /dev/null; then
@@ -84,7 +84,7 @@ mv /home/$USER_HOME/.config/polybar /home/$USER_HOME/.config/polybar-BACKUP 2>/d
 mv /home/$USER_HOME/.config/kitty /home/$USER_HOME/.config/kitty-BACKUP 2>/dev/null
 mv /home/$USER_HOME/.config/dunst /home/$USER_HOME/.config/dunst-BACKUP 2>/dev/null
 mv /home/$USER_HOME/.config/ranger /home/$USER_HOME/.config/ranger-BACKUP 2>/dev/null
-mv /home/$USER_HOME/.oh-my-zsh /home/$USER_HOME/.oh-my-zsh-BACKUP 2>/dev/null
+#mv /home/$USER_HOME/.oh-my-zsh /home/$USER_HOME/.oh-my-zsh-BACKUP 2>/dev/null
 #mv $USER_HOME/.config/ $USER_HOME/.config/
 mv /home/$USER_HOME/.zshrc /home/$USER_HOME/.zshrc-BACKUP 2>/dev/null
 mv /home/$USER_HOME/.vimrc /home/$USER_HOME/.vimrc-BACKUP 2>/dev/null
@@ -101,7 +101,7 @@ checkexists polybar && cp -r .config/polybar /home/$USER_HOME/.config/polybar
 checkexists kitty && cp -r .config/kitty /home/$USER_HOME/.config/kitty
 checkexists dunst && cp -r .config/dunst /home/$USER_HOME/.config/dunst
 checkexists ranger- && cp -r .config/ranger /home/$USER_HOME/.config/ranger
-cp -r .oh-my-zsh /home/$USER_HOME
+#cp -r .oh-my-zsh /home/$USER_HOME
 cp -r .zshrc /home/$USER_HOME && sed -i "s/foxmaccloud/$USER_HOME/g" /home/$USER_HOME/.zshrc
 cp -r .vimrc /home/$USER_HOME
 

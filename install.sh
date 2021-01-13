@@ -6,6 +6,7 @@ printf "Note that this program is still work in progress!\n\n"
 
 yesnoPrompt() {
     while true; do
+    printf "\n"
     read -p "$1 (y/n)" yn
     case $yn in
         [Yy]* ) break;;
@@ -42,7 +43,7 @@ fi
 
 # Get user home dir
 USER_HOME=$(getent passwd $SUDO_USER | cut -d: -f6 | cut -d "/" -f3)
-yesnoPrompt "\nInstalling under the user \"$USER_HOME\" Is this the correct user?"
+yesnoPrompt "Installing under the user \"$USER_HOME\" Is this the correct user?"
 
 
 if type -p zsh > /dev/null; then

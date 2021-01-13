@@ -51,6 +51,10 @@ else
     sudo -u "$USER_HOME" mkdir -p "/home/$USER_HOME/.cache/zsh/"
 fi
 
+# Get oh my zsh
+git clone https://github.com/ohmyzsh/ohmyzsh.git /home/$USER_HOME/.oh-my-zsh
+
+
 # Install software
 # TODO: Add polybar from the AUR 
 checkInstalled vim

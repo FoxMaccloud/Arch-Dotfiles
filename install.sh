@@ -42,6 +42,12 @@ checkInstalled() {
     fi
 }
 
+installYCM(){
+    cd /home/$SUDO_USER/.vim/plugged/youcompleteme
+    python3 install.py --all 2>$1
+    cd $SCRIPTPATH
+}
+
 # Check if user is root.
 if [[ "$EUID" -ne 0 ]]; then
     error "Are you sure you're running this as the root user?"

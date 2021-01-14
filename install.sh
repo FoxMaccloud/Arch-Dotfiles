@@ -34,6 +34,7 @@ getAur(){
     cd $SCRIPTPATH
 }
 
+# Check that packages are installed
 checkInstalled() {
     if type -p "$1" > /dev/null; then
         printf "Found "$1"\n"
@@ -42,6 +43,7 @@ checkInstalled() {
     fi
 }
 
+# Setup youcompleteme vim plugin
 installYCM(){
     cd /home/$SUDO_USER/.vim/plugged/youcompleteme
     python3 install.py --all 2>$1
@@ -62,7 +64,7 @@ fi
 USER_HOME=$(getent passwd $SUDO_USER | cut -d: -f6 | cut -d "/" -f3)
 yesnoPrompt "Installing under the user \"$USER_HOME\" Is this the correct user?"
 
-
+# Check that zsh is installed
 if type -p zsh > /dev/null; then
     printf "Found zsh\n"
 else
@@ -135,7 +137,6 @@ cp wallhaven-j59zrp.jpg /home/$USER_HOME/Pictures/Wallpapers/
 
 
 # Fix ownership for files
-
 chGrpOwn(){
     chown -R $USER_HOME /home/$USER_HOME/$1
     chgrp -R $USER_HOME /home/$USER_HOME/$1

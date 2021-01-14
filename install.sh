@@ -23,6 +23,16 @@ error(){
     #printf "ERROR:\\n%s\\n" "$1" >&2; exit 1;
 }
 
+# Install aur
+getAur(){
+    SCRIPTPATH='dirname $SCRIPT'
+    mkdir /tmp/aur
+    git clone https://aur.archlinux.org/yay.git /tmp/aur
+    sudo chown -R $USER_HOME:$USER_HOME /tmp/aur/aur-git
+    cd /tmp/aur/aur-git
+    sudo -u "$USER_HOME" makepkg --noconfirm -si 2>$1
+}
+
 checkInstalled() {
     if type -p "$1" > /dev/null; then
         printf "Found "$1"\n"

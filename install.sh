@@ -31,6 +31,7 @@ getAur(){
     sudo chown -R $USER_HOME:$USER_HOME /tmp/aur/aur-git
     cd /tmp/aur/aur-git
     sudo -u "$USER_HOME" makepkg --noconfirm -si 2>$1
+    cd $SCRIPTPATH
 }
 
 checkInstalled() {

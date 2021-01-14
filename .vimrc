@@ -23,12 +23,15 @@ if empty(glob('~/.vim/autoload/plug.vim'))
 endif
 
 call plug#begin('~/.vim/plugged')
+
+    " Usefull stuff
 	Plug 'scrooloose/syntastic'
 	Plug 'scrooloose/nerdtree'
 	Plug 'scrooloose/nerdcommenter'
 	Plug 'valloric/youcompleteme'
 	Plug 'xuhdev/singlecompile'
     Plug 'norcalli/nvim-colorizer.lua'
+    Plug 'airblade/vim-gitgutter'
 
 	" Colorschemes
 	Plug 'chriskempson/base16-vim'
@@ -38,7 +41,10 @@ call plug#begin('~/.vim/plugged')
 	" LaTeX
 "	plug 'lervag/vimtex'
 "	plug 'xuhdev/vim-latex-live-preview'
-"	plug 'xuhdev/vim-latex-live-preview', { 'for': 'tex' }	
+	Plug 'xuhdev/vim-latex-live-preview', { 'for': 'tex' }	
+
+    " Markdown
+    Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
 
 
 call plug#end()
@@ -69,15 +75,16 @@ imap <A-BS> <C-W>daw
 
 
 
-"######################
-"# Table of contents  #
-"#	                  # 
-"#  1. Syntastic      #
-"#	2. Nerdtree       #
-"#	3. Colors & Fonts #
-"#	4. SingleCompile  #
-"#	5. Colors & Fonts #
-"######################
+"##########################
+"# Table of contents      #
+"#	                      # 
+"#  1. Syntastic          #
+"#	2. Nerdtree           #
+"#	3. Nerdcommenter      #
+"#	4. SingleCompile      #
+"#  5. latex-live-preview #
+"#	6. Colors & Fonts     #
+"##########################
 
 "~~~~~~~~~~~~~~~~~~~~~~~~
 "	1. Syntastic
@@ -161,23 +168,18 @@ let g:NERDTrimTrailingWhitespace = 1 " Enable trimming of trailing whitespace wh
 nmap <F9> :SCCompile<cr>
 nmap <F10> :SCCompileRun<cr>
 
-
+"~~~~~~~~~~~~~~~~~~~~~~~~
+"   5. latex-live-preview
+"~~~~~~~~~~~~~~~~~~~~~~~~
+"
+let g:livepreview_previewer = 'zathura'
+let g:livepreview_use_biber = 1
 
 "~~~~~~~~~~~~~~~~~~~~~~~~
-"     5. Colors and Fonts     
+"     6. Colors and Fonts     
 "~~~~~~~~~~~~~~~~~~~~~~~~
 "set termguicolors
 set background=dark
-
-
-
-
-
-
-
-
-
-
 
 
 

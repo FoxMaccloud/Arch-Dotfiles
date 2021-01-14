@@ -135,8 +135,8 @@ alias ls='ls --color=auto'
 #PS1="\[\e[32m\][\[\e[0m\]\A\[\e[32m\]]\[\e[0m\]\[\e[31m\]*\[\e[0m\]\[\e[32m\][\[\e[0m\]\u\[\e[32m\]]\[\e[0m\]\[\e[34m\]*\[\e[0m\]\[\e[32m\][\[\e[0m\]\W\[\e[32m\]]\[\e[0m\]\[\e[31m\]*\[\e[0m\]\[\e[36m\][\[\e[34m\]\$\[\e[36m\]]\[\e[0m\]"
 
 
-TERM='rxvt-unicode-256color'
-
+#TERM='rxvt-unicode-256color'
+TERM='xterm-kitty'
 
 # Colors.
 red='\e[0;31m'
@@ -182,6 +182,7 @@ alias wifi="sudo wifi-menu" # can also use networkmanager (nm)
 alias steam="flatpak run com.valvesoftware.Steam"
 #alias pdf="okular"
 alias pdf="zathura"
+alias sxiv="sxiv -a"
 alias powershell="pwsh"
 alias .='cd ../'
 alias ..='cd ../../'
@@ -223,6 +224,17 @@ alias \?='duck'
 
 alias hosts="sudo vim /etc/hosts"
 alias suspend="systemctl suspend"
+
+
+
+impacket() {
+    if [ -f $1 ]; then
+        ls /home/foxmaccloud/Programs/impacket/examples/
+    else
+        /home/foxmaccloud/Programs/impacket/examples/$1.py
+    fi
+}
+
 
 extract () {
 if [ -f $1 ] ; then

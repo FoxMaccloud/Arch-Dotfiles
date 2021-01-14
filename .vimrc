@@ -60,6 +60,7 @@ set showcmd
 set encoding=utf-8
 set showmatch
 set mouse=a
+filetype on
 "set relativenumber
 "filetype plugin indent on
 

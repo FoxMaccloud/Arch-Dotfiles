@@ -151,6 +151,8 @@ chGrpOwn .oh-my-zsh
 chGrpOwn .zshrc
 chGrpOwn .vimrc
 chGrpOwn Pictures
+chown -R $USER_HOME /home/$USER_HOME/Pictures
+
 
 # TODO: Fix me!
 reloadDaemons(){

@@ -97,11 +97,11 @@ source $ZSH/oh-my-zsh.sh
 # export LANG=en_US.UTF-8
 
 # Preferred editor for local and remote sessions
-# if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
+if [[ -n $SSH_CONNECTION ]]; then
+  export EDITOR='vim'
 # else
 #   export EDITOR='mvim'
-# fi
+fi
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
@@ -217,6 +217,7 @@ alias evil-winrm='/home/foxmaccloud/Programs/evil-winrm/evil-winrm.rb'
 alias dnsrecon='/home/foxmaccloud/Programs/dnsrecon/dnsrecon.py'
 #alias kerbrute='/home/foxmaccloud/go/bin/kerbrute'
 alias ropstar='/home/foxmaccloud/Programs/ropstar/ropstar.py'
+alias hashcat="hashcat --opencl-device-types=1,2"
 
 
 alias \?='duck'

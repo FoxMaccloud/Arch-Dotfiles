@@ -32,6 +32,8 @@ call plug#begin('~/.vim/plugged')
 	Plug 'xuhdev/singlecompile'
     Plug 'norcalli/nvim-colorizer.lua'
     Plug 'airblade/vim-gitgutter'
+    Plug 'jiangmiao/auto-pairs'
+    Plug 'itchyny/lightline.vim'
 
 	" Colorschemes
 	Plug 'chriskempson/base16-vim'
@@ -66,6 +68,8 @@ filetype on
 
 "let g:livepreview_previewer = 'okular'
 
+"bind leader
+:let mapleader = ","
 
 "bind for daw
 imap <A-BS> <C-W>daw
@@ -110,7 +114,8 @@ nnoremap <silent> <C-l> :call WinMove('l')<CR>
 "#	3. Nerdcommenter      #
 "#	4. SingleCompile      #
 "#  5. latex-live-preview #
-"#	6. Colors & Fonts     #
+"#  6. lightline          #
+"#	7. Colors & Fonts     #
 "##########################
 
 "~~~~~~~~~~~~~~~~~~~~~~~~
@@ -202,8 +207,19 @@ nmap <F10> :SCCompileRun<cr>
 let g:livepreview_previewer = 'zathura'
 let g:livepreview_use_biber = 1
 
+
 "~~~~~~~~~~~~~~~~~~~~~~~~
-"     6. Colors and Fonts     
+"     7. lightline     
+"~~~~~~~~~~~~~~~~~~~~~~~~
+set laststatus=2
+let g:lightline = {
+      \ 'colorscheme': 'jellybeans',
+      \ }
+
+
+
+"~~~~~~~~~~~~~~~~~~~~~~~~
+"     7. Colors and Fonts     
 "~~~~~~~~~~~~~~~~~~~~~~~~
 "set termguicolors
 set background=dark

@@ -112,6 +112,7 @@ mv /home/$USER_HOME/.config/ranger /home/$USER_HOME/.config/ranger-BACKUP 2>/dev
 mv /home/$USER_HOME/.zshrc /home/$USER_HOME/.zshrc-BACKUP 2>/dev/null
 mv /home/$USER_HOME/.vimrc /home/$USER_HOME/.vimrc-BACKUP 2>/dev/null
 
+# Checks that files already exsists in the system.
 checkexists() {
     if [[ ! -f /home/$USER_HOME/.config/$1 ]]; then
         mkdir -p /home/$USER_HOME/.config/$1

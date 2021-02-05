@@ -41,7 +41,8 @@
 I'm posting my dotfiles because some people wanted me to share.
 I like a minimalistic enviorment. I made a website which would be cool if you checked out.
 Check it out at https://foxmaccloud.com/
-The content I post on my website will go in the infosec direction.
+
+The content I post on my website will go in the infosec direction, but I might post other content aswell.
 I mainly post research, blogposts and ctf writeups.
   
 | Distribution   | Arch Linux | Contrary to popular belief Arch is the best distribution.                                       |

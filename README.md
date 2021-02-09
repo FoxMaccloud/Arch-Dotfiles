@@ -47,9 +47,9 @@ I mainly post research, blogposts and ctf writeups.
   
 | Distribution   | Arch Linux | Contrary to popular belief Arch is the best distribution.                                       |
 |----------------|------------|-------------------------------------------------------------------------------------------------|
-| Window Manager | i3-gaps    | I like i3-gaps since it's fast and works great on my laptop. Makes me unreliant on a mouse      |
-| Shell          | Zsh        | Zsh is an amazing replacement to bash. It also helps me with spelling correction xD             |
-| Terminal       | Kitty      | I used to use URXVT, but I now use Kitty because of it's GPU acceleration                       |
+| Window Manager | i3-gaps    | I like i3-gaps since it's fast and works great on my laptop. Makes me unreliant on a mouse.     |
+| Shell          | Zsh        | Zsh is an amazing replacement to bash. It also helps me with spelling correction xD.            |
+| Terminal       | Kitty      | I used to use URXVT, but I now use Kitty because of it's GPU acceleration.                      |
 | Bar            | Polybar    | Polybar is a great bar. I swapped to this after using the standard i3bar for a while.           |
 | Browser        | FireFox    | Firefox, guuuuud...                                                                             |
 | Editor         | Vim        | I use vim for everything. My goto editor. I also use full IDEs when the situation calls for it. |

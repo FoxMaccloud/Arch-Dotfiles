@@ -227,7 +227,6 @@ alias hosts="sudo vim /etc/hosts"
 alias suspend="systemctl suspend"
 
 
-
 impacket() {
     if [ -f $1 ]; then
         ls /home/foxmaccloud/Programs/impacket/examples/

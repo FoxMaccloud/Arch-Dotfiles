@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# Made by FoxMaccloud
+
 printf "\nWelcome!\n\n"
 printf "Installing my dotfiles now! Make sure to be running as root.\n"
 printf "Note that this program is still work in progress!\n"
